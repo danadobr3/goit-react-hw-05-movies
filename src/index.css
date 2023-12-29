@@ -7,9 +7,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #EAEBEE;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul,
+li,
+link {
+  list-style: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+
+button:hover,
+button:focus {
+  background-color: rgb(108, 47, 252);
+  color: white;
 }
