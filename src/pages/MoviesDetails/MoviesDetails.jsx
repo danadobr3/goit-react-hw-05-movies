@@ -1,71 +1,19 @@
-// import { Suspense, useRef } from "react";
-// import { Link, Outlet, useLocation } from "react-router-dom";
-// import { useFetchMovieDetails } from "components/helpers/useFetchMoviesDetails";
-// import { BackBtn } from "components/BackBtn/BackBtn";
-// import Loader from "components/Loader/Loader";
-// import MovieInfo from "components/MovieInfo/MovieInfo";
-
-
-
-// const MoviesDetailsPage = () => {
-//   const { movie, error, loading } = useFetchMovieDetails();
-//   const location = useLocation();
-//   const goBack = useRef(location.state?.from ?? '/');
-
-//   return (
-//     <>
-//       {loading && <Loader />}
-//       {error && <h3>Try to reload the page</h3>}
-//       <BackBtn path={goBack.current} />
-//       {movie && <MovieInfo movie={movie} />}
-//       <ul
-//         style={{
-//           display: 'flex',
-//           gap: '10px',
-//           flexWrap: 'wrap',
-//           alignItems: 'center',
-//           justifyContent: 'space-around',
-//         }}
-//       >
-//         <li>
-//           <Link to="cast">
-//             <h4 style={{ color: 'black' }}>Cast</h4>{' '}
-//           </Link>
-//         </li>
-//         <li>
-//           <Link to="reviews">
-//             <h4 style={{ color: 'black' }}>Reviews</h4>{' '}
-//           </Link>
-//         </li>
-//       </ul>
-//       <Suspense fallback={<Loader />}>
-//         <Outlet />
-//       </Suspense>
-//     </>
-//   );
-// };
-
-
-// export default MoviesDetailsPage;
-
-// MoviesDetailsPage.js
 import { Suspense, useRef } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useFetchMovieDetails } from "components/helpers/useFetchMoviesDetails";
 import { BackBtn } from "components/BackBtn/BackBtn";
 import Loader from "components/Loader/Loader";
 import MovieInfo from "components/MovieInfo/MovieInfo";
-import { StyledLinkItem, StyledLinkText, StyledLinksList, StyledMovieDetailsPage } from "./MoviesDetailsPage.styled";
+import { StyledLinkItem, StyledLinkText, StyledLinksList, StyledMovieDetails } from "./MoviesDetails.styled";
 
 
-
-const MoviesDetailsPage = () => {
+const MoviesDetails = () => {
   const { movie, error, loading } = useFetchMovieDetails();
   const location = useLocation();
   const goBack = useRef(location.state?.from ?? '/');
 
   return (
-    <StyledMovieDetailsPage>
+    <StyledMovieDetails>
       {loading && <Loader />}
       {error && <h3>Try to reload the page</h3>}
       <BackBtn path={goBack.current} />
@@ -85,9 +33,9 @@ const MoviesDetailsPage = () => {
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
-    </StyledMovieDetailsPage>
+    </StyledMovieDetails>
   );
 };
 
-export default MoviesDetailsPage;
+export default MoviesDetails;
 

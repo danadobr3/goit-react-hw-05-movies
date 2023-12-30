@@ -28,4 +28,5 @@ const SearchForm = ({ handleSubmit }) => {
   );
 };
 
+
 export default SearchForm;

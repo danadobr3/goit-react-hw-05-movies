@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import { SharedLayout } from './Layout/Layout';
 import { Suspense, lazy } from 'react';
+
+import { SharedLayout } from './Layout/Layout';
 
 
 
@@ -11,7 +12,9 @@ const NotFound = lazy(() => import('./NotFound/NotFound'));
 const Cast = lazy(() => import('./Cast/Cast'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
 
+
 export const App = () => {
+
   return (
     <Suspense fallback={<div> Loading page... </div>}>
       <Routes>

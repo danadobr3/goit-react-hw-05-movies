@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledMovieDetailsPage = styled.div`
+export const StyledMovieDetails = styled.div`
   display: flex;
   flex-direction: column;
 `;
